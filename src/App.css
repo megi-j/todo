@@ -25,13 +25,12 @@
   flex-direction: column;
   /* justify-content: space-between; */
   align-items: center;
-  border: 2px solid red;
 }
 .img-box {
   width: 430px;
   height: 202px;
   position: relative;
-  border: 1px solid black;
+ 
 }
 .img-box img{
   width: 100%;
@@ -57,9 +56,8 @@
 .note-box {
   width: 373px;
   height: 49px;
- 
   margin: 23px auto;
-  
+ 
 }
 form {
   width: 100%;
@@ -88,14 +86,16 @@ form {
   color: #888888;
   font-size: 16px;
   font-family: 'Inter';
+  padding-left: 38px;
 }
 .result-box {
   width: 373px;
+  height: 44px;
   margin: 24px auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid green;
+  margin-bottom: -10px;
 }
 .no-check{
   width: 20px;
@@ -105,4 +105,47 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+/* .filter-box {
+  width: 86%;
+  height: 49px;
+  border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.filter-box button {
+  width: 88px;
+  height: 100%;
+  border: 5px solid blue;
+  margin-left: 20px;
+  cursor: pointer;
+} */
+.icon-box {
+  width: 62px;
+  display: flex;
+  justify-content: space-between;
+}
+.todo-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Inter";
+}
+.todo-info h4{
+  color: #0D0D0D;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+
+}
+.todo-info p{
+  color: #888888;
+  font-size: 14px;
+}
+.bin {
+  width: 20px;
+  height: 20px;
 }

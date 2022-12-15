@@ -1,5 +1,4 @@
 
-
 type Props={
   noteInputValue: string;
   changeNote: (text: any)=>void;
@@ -15,10 +14,8 @@ export default function NoteBox(props:Props) {
           <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 17.5V9.5M9 9.5V1.5M9 9.5H17M9 9.5H1" stroke="white" strokeWidth="2" strokeLinecap="round"/>
           </svg>
-
         </button>
-      </form>
-      
+      </form>   
     </div>
   )
 }
