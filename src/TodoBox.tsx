@@ -1,19 +1,21 @@
 import ImageBox from './ImageBox'
 import NoteBox from './NoteBox'
 import ResultBox from './ResultBox';
+import { TodoType } from './types';
 
 // import FilterBox from './FilterBox'
 type Props={
   noteInputValue: string;
-  changeNote: (text: any)=>void;
+  changeNote: (event: React.ChangeEvent<HTMLInputElement>)=>void;
   // resultBox?: any;
   addNote?: ()=>void;
-  handleSubmit: (text:any)=>void;
-  todos?: any;
+  handleSubmit: React.FormEventHandler<HTMLFormElement>
+  todos: TodoType[];
   removeTodo: (text:number)=>void;
   changeDone: (text:number)=>void;
   hours: string;
-
+  changeMark:()=>void;
+  marked: boolean;
 }
 
 export default function TodoBox(props:Props) {
@@ -52,10 +54,12 @@ export default function TodoBox(props:Props) {
   return (
        <div className="todo-box">
           <ImageBox hours={props.hours} />
-          <NoteBox noteInputValue= {props.noteInputValue} changeNote={props.changeNote} addNote={props.addNote} handleSubmit = {props.handleSubmit} />
+          <NoteBox noteInputValue= {props.noteInputValue} changeNote={props.changeNote} addNote={props.addNote} handleSubmit = {props.handleSubmit} changeMark={props.changeMark} marked={props.marked} />
           {/* <FilterBox /> */}
           {props.todos.map((item:any, index:number)=>{
-            return <ResultBox noteInputValue = {item.text} removeTodo={()=>props.removeTodo(index)} changeDone={()=>props.changeDone(index)} isDone={item.isDone} time={item.time} />
+            return <ResultBox noteInputValue = {item.text} removeTodo={()=>props.removeTodo(index)} 
+            changeDone={()=>props.changeDone(index)} isDone={item.isDone} 
+            time={item.time} key={index} />
             })}
           {/* {filterCompleted()} */}
        </div>
